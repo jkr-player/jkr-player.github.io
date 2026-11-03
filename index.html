@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JKR Premium Player</title>
+<meta name="description" content="JKR Premium Player – Medienplayer für deine eigenen Playlists auf Fire TV, Android TV, LG, Samsung, iPhone, Apple TV und Mac.">
+<link rel="icon" href="logo.png">
+<style>
+  :root { --bg: #0f1116; --card: #181b22; --line: #262a33; --text: #eceef2; --muted: #a2a8b4; --cream: #f0e6d2; --gold: #d8b46a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  main { max-width: 900px; margin: 0 auto; padding: 24px 16px 60px; }
+  header { display: flex; align-items: center; gap: 16px; padding: 12px 0 8px; }
+  header img { width: 64px; height: 64px; }
+  header h1 { margin: 0; font-size: 28px; letter-spacing: .5px; }
+  header p { margin: 0; color: var(--muted); font-size: 14px; letter-spacing: 3px; text-transform: uppercase; }
+  .langs { margin-left: auto; display: flex; gap: 6px; }
+  .langs button { background: var(--card); color: var(--muted); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 14px; cursor: pointer; }
+  .langs button[aria-pressed="true"] { color: var(--bg); background: var(--cream); border-color: var(--cream); }
+  .intro { color: var(--muted); margin: 8px 0 28px; }
+  h2 { font-size: 22px; margin: 36px 0 12px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .card h3 { margin: 0 0 4px; font-size: 19px; }
+  .card .who { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .card ol { margin: 0; padding-left: 20px; }
+  .card li { margin: 4px 0; }
+  .badge { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; margin-left: 6px; vertical-align: middle; }
+  .ok { background: #1f3a2a; color: #8fd6a6; }
+  .soon { background: #3a321f; color: var(--gold); }
+  .code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 22px; font-weight: 700; color: var(--cream); letter-spacing: 2px; }
+  a { color: var(--cream); }
+  .btn { display: inline-block; margin-top: 10px; background: var(--cream); color: var(--bg); text-decoration: none; font-weight: 600; padding: 8px 14px; border-radius: 999px; font-size: 15px; }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 8px 0; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { color: var(--muted); margin: 8px 0 2px; }
+  .note { border-left: 3px solid var(--gold); padding: 6px 14px; color: var(--muted); margin-top: 36px; font-size: 15px; }
+  footer { margin-top: 36px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 16px; }
+  @media (max-width: 520px) { header { flex-wrap: wrap; } .langs { margin-left: 0; width: 100%; } header h1 { font-size: 24px; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="logo.png" alt="">
+    <div><h1>JKR</h1><p>Premium Player</p></div>
+    <div class="langs" role="group" aria-label="Sprache / Language / Dil">
+      <button data-lang="de">Deutsch</button><button data-lang="en">English</button><button data-lang="tr">Türkçe</button>
+    </div>
+  </header>
+  <p class="intro" data-k="intro"></p>
+
+  <h2 data-k="getTitle"></h2>
+  <div class="grid">
+    <section class="card">
+      <h3>Amazon Fire TV <span class="badge ok" data-k="available"></span></h3>
+      <p class="who" data-k="fireWho"></p>
+      <ol>
+        <li data-k="fire1"></li>
+        <li data-k="fire2"></li>
+        <li><span data-k="fire3"></span><br><span class="code">6131546</span></li>
+        <li data-k="fire4"></li>
+      </ol>
+    </section>
+    <section class="card">
+      <h3>Android TV / Google TV <span class="badge ok" data-k="available"></span></h3>
+      <p class="who" data-k="androidWho"></p>
+      <ol>
+        <li data-k="android1"></li>
+        <li data-k="android2"></li>
+        <li><span data-k="fire3"></span><br><span class="code">6131546</span></li>
+      </ol>
+      <a class="btn" href="https://github.com/Baro86/jkr-premium-player/releases/latest/download/JKR-Premium-Player.apk" data-k="apk"></a>
+    </section>
+    <section class="card">
+      <h3>LG Smart TV <span class="badge soon" data-k="review"></span></h3>
+      <p class="who" data-k="lgWho"></p>
+      <p data-k="lgText"></p>
+    </section>
+    <section class="card">
+      <h3>Samsung Smart TV <span class="badge soon" data-k="soon"></span></h3>
+      <p class="who" data-k="samsungWho"></p>
+      <p data-k="samsungText"></p>
+    </section>
+    <section class="card">
+      <h3>iPhone, iPad &amp; Apple TV <span class="badge soon" data-k="soon"></span></h3>
+      <p class="who" data-k="appleWho"></p>
+      <p data-k="appleText"></p>
+    </section>
+    <section class="card">
+      <h3>Mac <span class="badge ok" data-k="available"></span></h3>
+      <p class="who" data-k="macWho"></p>
+      <p data-k="macText"></p>
+      <a class="btn" href="https://github.com/Baro86/jkr-premium-player/releases/download/mac-v1.0.0/JKR-Player-Mac-1.0.0.dmg" data-k="macBtn"></a>
+    </section>
+  </div>
+
+  <h2 data-k="startTitle"></h2>
+  <div class="card">
+    <ol>
+      <li data-k="start1"></li>
+      <li data-k="start2"></li>
+      <li data-k="start3"></li>
+    </ol>
+  </div>
+
+  <h2 data-k="helpTitle"></h2>
+  <details><summary data-k="q1"></summary><p data-k="a1"></p></details>
+  <details><summary data-k="q2"></summary><p data-k="a2"></p></details>
+  <details><summary data-k="q3"></summary><p data-k="a3"></p></details>
+  <details><summary data-k="q4"></summary><p data-k="a4"></p></details>
+  <details><summary data-k="q5"></summary><p data-k="a5"></p></details>
+  <details><summary data-k="q6"></summary><p data-k="a6"></p></details>
+
+  <p class="note" data-k="disclaimer"></p>
+
+  <footer>
+    <span data-k="contact"></span> <a href="mailto:jokermedya58@gmail.com">jokermedya58@gmail.com</a> ·
+    <a href="datenschutz.html" data-k="privacy"></a>
+  </footer>
+</main>
+<script>
+const T = {
+  de: {
+    intro: "Ein schneller, übersichtlicher Player für deine eigenen Playlists – Live-TV, Filme und Serien von deinem Anbieter auf dem Fernseher und Handy.",
+    getTitle: "So bekommst du die App", available: "verfügbar", review: "in Prüfung", soon: "bald",
+    fireWho: "Fire TV Stick, Fire TV Cube, Fernseher mit Fire TV",
+    fire1: "Im Amazon Appstore die App „Downloader“ installieren.",
+    fire2: "Einstellungen → Mein Fire TV → Entwickleroptionen → „Apps unbekannter Herkunft“ für Downloader erlauben.",
+    fire3: "Downloader öffnen und diesen Code eingeben:",
+    fire4: "Installieren tippen – fertig. Updates bietet die App selbst an.",
+    androidWho: "z. B. Sony, Philips (mit Google TV), TCL, Xiaomi, Hisense mit Android, Nvidia Shield, Chromecast",
+    android1: "Im Google Play Store die App „Downloader“ installieren.",
+    android2: "In den Einstellungen unter Apps → Sicherheit „Unbekannte Quellen“ für Downloader erlauben.",
+    apk: "Oder APK direkt laden",
+    lgWho: "LG Fernseher mit webOS (ab 2022)",
+    lgText: "Die App ist bei LG eingereicht und erscheint nach der Prüfung im LG Content Store unter „JKR Premium Player“.",
+    samsungWho: "Samsung Fernseher mit Tizen (ab 2021)",
+    samsungText: "Die Samsung-Version ist in Vorbereitung.",
+    appleWho: "iPhone, iPad, Apple TV",
+    appleText: "Die App ist bei Apple eingereicht und erscheint nach der Prüfung im App Store unter „JKR Premium Player“.",
+    macWho: "Mac mit macOS 14 oder neuer",
+    macText: "Datei laden, öffnen und JKR Player in den Ordner „Programme“ ziehen. Von Apple geprüft.",
+    macBtn: "Für Mac herunterladen",
+    startTitle: "Erste Schritte",
+    start1: "App öffnen und den Hinweis mit „Verstanden“ bestätigen.",
+    start2: "Server-Adresse (oder den Kurzcode deines Anbieters), Benutzername und Passwort eingeben – oder unter „M3U-Link“ deine Playlist einfügen.",
+    start3: "Anmelden – Live-TV, Filme und Serien erscheinen nach Kategorien.",
+    helpTitle: "Hilfe",
+    q1: "Was kostet die App?",
+    a1: "Du kannst alle Funktionen 7 Tage kostenlos testen. Danach brauchst du eine einmalige Freischaltung (kein Abo). Auf dem Fernseher bezahlst du per QR-Code mit dem Handy, in den Apple-Apps über den App Store.",
+    q2: "Anmeldung klappt nicht",
+    a2: "Prüfe Server-Adresse, Benutzername und Passwort (Groß-/Kleinschreibung). Nach mehreren Fehlversuchen sperren manche Server die Verbindung eine Weile. Bei einem Kurzcode: Code beim Anbieter nachfragen.",
+    q3: "Ein Sender läuft nicht",
+    a3: "Meist liegt es am Anbieter oder daran, dass der Account gerade auf einem anderen Gerät läuft. Probiere einen anderen Sender. Bei Aussetzern hilft in den Einstellungen ein größerer Puffer.",
+    q4: "Was ist der Anbieter-Kurzcode?",
+    a4: "Manche Anbieter geben dir statt einer langen Server-Adresse einen 4-stelligen Code. Gib ihn einfach ins Feld für die Server-Adresse ein.",
+    q5: "Ich habe ein neues Gerät",
+    a5: "Die Freischaltung gilt pro Gerät. Schreib uns mit dem Geräte-Code (Einstellungen → Lizenz), wenn es Probleme gibt.",
+    q6: "Gibt es Sender oder Filme in der App?",
+    a6: "Nein. Die App ist nur ein Player. Die Inhalte kommen von deinem eigenen Anbieter.",
+    disclaimer: "JKR Premium Player ist ein allgemeiner Medienplayer und enthält keine Inhalte. Es werden keine Sender, Filme, Serien oder Playlists mitgeliefert, verkauft oder vermittelt. Nutze nur Inhalte, zu deren Nutzung du berechtigt bist.",
+    contact: "Kontakt:", privacy: "Datenschutz"
+  },
+  en: {
+    intro: "A fast, clean player for your own playlists – live TV, movies and series from your provider on your TV and phone.",
+    getTitle: "How to get the app", available: "available", review: "in review", soon: "soon",
+    fireWho: "Fire TV Stick, Fire TV Cube, TVs with Fire TV",
+    fire1: "Install the “Downloader” app from the Amazon Appstore.",
+    fire2: "Settings → My Fire TV → Developer options → allow “Apps from unknown sources” for Downloader.",
+    fire3: "Open Downloader and enter this code:",
+    fire4: "Tap Install – done. The app offers updates itself.",
+    androidWho: "e.g. Sony, Philips (with Google TV), TCL, Xiaomi, Hisense with Android, Nvidia Shield, Chromecast",
+    android1: "Install the “Downloader” app from the Google Play Store.",
+    android2: "In Settings → Apps → Security, allow “Unknown sources” for Downloader.",
+    apk: "Or download the APK directly",
+    lgWho: "LG TVs with webOS (2022 and later)",
+    lgText: "The app has been submitted to LG and will appear in the LG Content Store as “JKR Premium Player” after review.",
+    samsungWho: "Samsung TVs with Tizen (2021 and later)",
+    samsungText: "The Samsung version is in preparation.",
+    appleWho: "iPhone, iPad, Apple TV",
+    appleText: "The app has been submitted to Apple and will appear in the App Store as “JKR Premium Player” after review.",
+    macWho: "Mac with macOS 14 or later",
+    macText: "Download the file, open it and drag JKR Player into the Applications folder. Checked by Apple.",
+    macBtn: "Download for Mac",
+    startTitle: "Getting started",
+    start1: "Open the app and confirm the notice with “Understood”.",
+    start2: "Enter the server address (or your provider's short code), username and password – or paste your playlist under “M3U link”.",
+    start3: "Sign in – live TV, movies and series appear by category.",
+    helpTitle: "Help",
+    q1: "What does the app cost?",
+    a1: "You can try every feature free for 7 days. After that you need a one-time unlock (no subscription). On the TV you pay with your phone via QR code; in the Apple apps through the App Store.",
+    q2: "Sign-in doesn't work",
+    a2: "Check server address, username and password (upper/lower case). After several failed attempts some servers block the connection for a while. With a short code: ask your provider for the code.",
+    q3: "A channel doesn't play",
+    a3: "Usually the provider is the cause, or the account is in use on another device. Try another channel. For dropouts, a larger buffer in Settings helps.",
+    q4: "What is the provider short code?",
+    a4: "Some providers give you a 4-digit code instead of a long server address. Just enter it in the server address field.",
+    q5: "I have a new device",
+    a5: "The unlock applies per device. Write to us with your device code (Settings → Licence) if there are problems.",
+    q6: "Are there channels or movies in the app?",
+    a6: "No. The app is only a player. The content comes from your own provider.",
+    disclaimer: "JKR Premium Player is a general media player and contains no content. No channels, movies, series or playlists are included, sold or arranged. Only use content you are entitled to use.",
+    contact: "Contact:", privacy: "Privacy policy (German)"
+  },
+  tr: {
+    intro: "Kendi oynatma listelerin için hızlı ve sade bir oynatıcı – sağlayıcından canlı TV, film ve diziler televizyonunda ve telefonunda.",
+    getTitle: "Uygulamayı nasıl edinirsin", available: "mevcut", review: "incelemede", soon: "yakında",
+    fireWho: "Fire TV Stick, Fire TV Cube, Fire TV'li televizyonlar",
+    fire1: "Amazon Appstore'dan “Downloader” uygulamasını yükle.",
+    fire2: "Ayarlar → Fire TV'm → Geliştirici seçenekleri → Downloader için “Bilinmeyen kaynaklardan uygulamalar”a izin ver.",
+    fire3: "Downloader'ı aç ve bu kodu gir:",
+    fire4: "Yükle'ye bas – bitti. Güncellemeleri uygulama kendisi sunar.",
+    androidWho: "ör. Sony, Philips (Google TV'li), TCL, Xiaomi, Android'li Hisense, Nvidia Shield, Chromecast",
+    android1: "Google Play Store'dan “Downloader” uygulamasını yükle.",
+    android2: "Ayarlar → Uygulamalar → Güvenlik'te Downloader için “Bilinmeyen kaynaklar”a izin ver.",
+    apk: "Veya APK'yı doğrudan indir",
+    lgWho: "webOS'lu LG televizyonlar (2022 ve sonrası)",
+    lgText: "Uygulama LG'ye gönderildi ve incelemeden sonra LG Content Store'da “JKR Premium Player” adıyla yer alacak.",
+    samsungWho: "Tizen'li Samsung televizyonlar (2021 ve sonrası)",
+    samsungText: "Samsung sürümü hazırlanıyor.",
+    appleWho: "iPhone, iPad, Apple TV",
+    appleText: "Uygulama Apple'a gönderildi ve incelemeden sonra App Store'da “JKR Premium Player” adıyla yer alacak.",
+    macWho: "macOS 14 veya üzeri Mac",
+    macText: "Dosyayı indir, aç ve JKR Player'ı “Uygulamalar” klasörüne sürükle. Apple tarafından kontrol edildi.",
+    macBtn: "Mac için indir",
+    startTitle: "İlk adımlar",
+    start1: "Uygulamayı aç ve bilgilendirmeyi “Anladım” ile onayla.",
+    start2: "Sunucu adresini (veya sağlayıcının kısa kodunu), kullanıcı adını ve şifreyi gir – ya da “M3U bağlantısı” altına oynatma listeni ekle.",
+    start3: "Giriş yap – canlı TV, filmler ve diziler kategorilere göre görünür.",
+    helpTitle: "Yardım",
+    q1: "Uygulama ne kadar?",
+    a1: "Tüm özellikleri 7 gün ücretsiz deneyebilirsin. Sonrasında tek seferlik kilit açma gerekir (abonelik yok). Televizyonda QR kod ile telefonundan, Apple uygulamalarında App Store üzerinden ödersin.",
+    q2: "Giriş yapamıyorum",
+    a2: "Sunucu adresini, kullanıcı adını ve şifreyi kontrol et (büyük/küçük harf). Birkaç hatalı denemeden sonra bazı sunucular bağlantıyı bir süre engeller. Kısa kod kullanıyorsan kodu sağlayıcına sor.",
+    q3: "Bir kanal açılmıyor",
+    a3: "Genellikle sebep sağlayıcıdır ya da hesap başka bir cihazda kullanılıyordur. Başka bir kanal dene. Kesintilerde Ayarlar'dan daha büyük bir tampon seçmek yardımcı olur.",
+    q4: "Sağlayıcı kısa kodu nedir?",
+    a4: "Bazı sağlayıcılar uzun bir sunucu adresi yerine 4 haneli bir kod verir. Kodu sunucu adresi alanına girmen yeterli.",
+    q5: "Yeni bir cihazım var",
+    a5: "Kilit açma cihaz başına geçerlidir. Sorun olursa cihaz kodunla (Ayarlar → Lisans) bize yaz.",
+    q6: "Uygulamada kanal veya film var mı?",
+    a6: "Hayır. Uygulama sadece bir oynatıcıdır. İçerikler kendi sağlayıcından gelir.",
+    disclaimer: "JKR Premium Player genel bir medya oynatıcıdır ve içerik barındırmaz. Kanal, film, dizi veya oynatma listesi sunulmaz, satılmaz veya aracılık edilmez. Yalnızca kullanma hakkına sahip olduğun içerikleri kullan.",
+    contact: "İletişim:", privacy: "Gizlilik (Almanca)"
+  }
+};
+function setLang(l) {
+  if (!T[l]) l = "de";
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-k]").forEach(e => { e.textContent = T[l][e.dataset.k] || ""; });
+  document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+  try { localStorage.setItem("jkr.lang", l); } catch (e) {}
+}
+document.querySelectorAll(".langs button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+let saved = null;
+try { saved = localStorage.getItem("jkr.lang"); } catch (e) {}
+setLang(saved || (navigator.language || "de").slice(0, 2));
+</script>
+</body>
+</html>

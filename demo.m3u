@@ -1,0 +1,11 @@
+#EXTM3U
+#EXTINF:-1 tvg-chno="1" group-title="Demo Live",Big Buck Bunny (HLS)
+https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
+#EXTINF:-1 tvg-chno="2" group-title="Demo Live",Apple Testbild (HLS)
+https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8
+#EXTINF:-1 tvg-chno="3" group-title="Demo Live",Tears of Steel (HLS)
+https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8
+#EXTINF:-1 group-title="Demo Filme",Sintel – Trailer (Blender Foundation, CC BY)
+https://download.blender.org/durian/trailer/sintel_trailer-1080p.mp4
+#EXTINF:-1 group-title="Demo Filme",Tears of Steel (Blender Foundation, CC BY)
+https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov
