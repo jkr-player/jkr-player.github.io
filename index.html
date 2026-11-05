@@ -51,6 +51,18 @@
   </header>
   <p class="intro" data-k="intro"></p>
 
+  <h2 data-k="featTitle"></h2>
+  <div class="grid">
+    <section class="card"><h3>📼 <span data-k="ft0"></span></h3><p class="who" data-k="fd0"></p></section>
+    <section class="card"><h3>▶ <span data-k="ft1"></span></h3><p class="who" data-k="fd1"></p></section>
+    <section class="card"><h3>🔔 <span data-k="ft2"></span></h3><p class="who" data-k="fd2"></p></section>
+    <section class="card"><h3>⚽ <span data-k="ft3"></span></h3><p class="who" data-k="fd3"></p></section>
+    <section class="card"><h3>👁 <span data-k="ft4"></span></h3><p class="who" data-k="fd4"></p></section>
+    <section class="card"><h3>🔢 <span data-k="ft5"></span></h3><p class="who" data-k="fd5"></p></section>
+    <section class="card"><h3>📲 <span data-k="ft6"></span></h3><p class="who" data-k="fd6"></p></section>
+    <section class="card"><h3>🛟 <span data-k="ft7"></span></h3><p class="who" data-k="fd7"></p></section>
+  </div>
+
   <h2 data-k="getTitle"></h2>
   <div class="grid">
     <section class="card">
@@ -92,7 +104,7 @@
       <h3>Mac <span class="badge ok" data-k="available"></span></h3>
       <p class="who" data-k="macWho"></p>
       <p data-k="macText"></p>
-      <a class="btn" href="https://github.com/Baro86/jkr-premium-player/releases/download/mac-v1.0.0/JKR-Player-Mac-1.0.0.dmg" data-k="macBtn"></a>
+      <a class="btn" href="https://github.com/Baro86/jkr-premium-player/releases/download/mac-v1.1.0/JKR-Player-Mac-1.1.0.dmg" data-k="macBtn"></a>
     </section>
   </div>
 
@@ -124,6 +136,15 @@
 const T = {
   de: {
     intro: "Ein schneller, übersichtlicher Player für deine eigenen Playlists – Live-TV, Filme und Serien von deinem Anbieter auf dem Fernseher und Handy.",
+    featTitle: "Was der Player kann",
+    ft0: "Archiv & von vorne", fd0: "Verpasste Sendungen der letzten Tage nachschauen oder die laufende Sendung von vorne starten (bei Sendern mit Archiv).",
+    ft1: "Weiterschauen", fd1: "Angefangene Filme und Folgen mit Fortschrittsbalken – ein Klick und es geht an der Stelle weiter.",
+    ft2: "TV-Guide & Erinnerung", fd2: "Programm für jeden Sender, Sendungen suchen und 5 Minuten vor Beginn erinnern lassen.",
+    ft3: "Fußball live", fd3: "Live-Statistik, Aufstellungen und Tor-Alarm für Galatasaray, Fenerbahçe, Beşiktaş und Trabzonspor – mit Sprung zum Sender des Spiels.",
+    ft4: "Deine Senderliste", fd4: "Länder und Kategorien ausblenden, Lieblingskategorien nach oben, Favoriten und „Zuletzt gesehen“.",
+    ft5: "Wie am Fernseher", fd5: "Live-TV anhalten und später weiterschauen, Mini-Player beim Stöbern (Fire TV), Zifferntasten, letzter Sender, Schlaf-Timer – Tonspur und Untertitel merkt sich der Player pro Sender.",
+    ft6: "Auf andere Geräte übertragen", fd6: "Favoriten und Einstellungen per 8-stelligem Code auf Fernseher, iPhone oder Mac – ohne Zugangsdaten.",
+    ft7: "Stabil", fd7: "Kurze Abbrüche werden automatisch und unbemerkt überbrückt.",
     getTitle: "So bekommst du die App", available: "verfügbar", review: "in Prüfung", soon: "bald", viaStick: "mit Fire TV Stick",
     fireWho: "Fire TV Stick, Fire TV Cube, Fernseher mit Fire TV",
     fire1: "Im Amazon Appstore die App „Downloader“ installieren.",
@@ -165,6 +186,15 @@ const T = {
   },
   en: {
     intro: "A fast, clean player for your own playlists – live TV, movies and series from your provider on your TV and phone.",
+    featTitle: "What the player does",
+    ft0: "Archive & start over", fd0: "Watch programmes from the last days or start the current one from the beginning (on channels with an archive).",
+    ft1: "Continue watching", fd1: "Films and episodes you started, with a progress bar – one click and you’re back where you were.",
+    ft2: "TV guide & reminders", fd2: "Programme for every channel, search shows and get a reminder 5 minutes before they start.",
+    ft3: "Live football", fd3: "Live stats, line-ups and goal alerts for Galatasaray, Fenerbahçe, Beşiktaş and Trabzonspor – with a jump to the match’s channel.",
+    ft4: "Your channel list", fd4: "Hide countries and categories, move your favourite ones to the top, favourites and “recently watched”.",
+    ft5: "Just like TV", fd5: "Pause live TV and continue later, mini player while browsing (Fire TV), number keys, last channel, sleep timer; audio track and subtitles are remembered per channel.",
+    ft6: "Move to other devices", fd6: "Favourites and settings to your TV, iPhone or Mac with an 8-character code – no login data.",
+    ft7: "Reliable", fd7: "Short dropouts are bridged automatically, without you noticing.",
     getTitle: "How to get the app", available: "available", review: "in review", soon: "soon", viaStick: "with Fire TV Stick",
     fireWho: "Fire TV Stick, Fire TV Cube, TVs with Fire TV",
     fire1: "Install the “Downloader” app from the Amazon Appstore.",
@@ -206,6 +236,15 @@ const T = {
   },
   tr: {
     intro: "Kendi oynatma listelerin için hızlı ve sade bir oynatıcı – sağlayıcından canlı TV, film ve diziler televizyonunda ve telefonunda.",
+    featTitle: "Oynatıcı neler yapar",
+    ft0: "Arşiv ve baştan izle", fd0: "Son günlerin yayınlarını izle veya devam eden yayını baştan başlat (arşivli kanallarda).",
+    ft1: "İzlemeye devam et", fd1: "Yarım kalan film ve bölümler ilerleme çubuğuyla – tek tıkla kaldığın yerden devam.",
+    ft2: "Yayın akışı ve hatırlatma", fd2: "Her kanal için yayın akışı, program arama ve başlamadan 5 dakika önce hatırlatma.",
+    ft3: "Canlı futbol", fd3: "Galatasaray, Fenerbahçe, Beşiktaş ve Trabzonspor için canlı istatistik, kadrolar ve gol alarmı – maçın kanalına geçiş ile.",
+    ft4: "Senin kanal listen", fd4: "Ülke ve kategorileri gizle, sevdiklerini en üste taşı, favoriler ve “son izlenenler”.",
+    ft5: "Televizyon gibi", fd5: "Canlı yayını duraklat ve sonra devam et, gezinirken mini oynatıcı (Fire TV), rakam tuşları, son kanal, uyku zamanlayıcısı; ses ve altyazı kanal başına hatırlanır.",
+    ft6: "Diğer cihazlara aktar", fd6: "Favoriler ve ayarlar 8 haneli kodla TV, iPhone veya Mac’e – giriş bilgisi olmadan.",
+    ft7: "Kesintisiz", fd7: "Kısa kopmalar otomatik ve fark ettirmeden aşılır.",
     getTitle: "Uygulamayı nasıl edinirsin", available: "mevcut", review: "incelemede", soon: "yakında", viaStick: "Fire TV Stick ile",
     fireWho: "Fire TV Stick, Fire TV Cube, Fire TV'li televizyonlar",
     fire1: "Amazon Appstore'dan “Downloader” uygulamasını yükle.",
