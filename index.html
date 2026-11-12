@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JKR Premium Player</title>
-<meta name="description" content="JKR Premium Player – Medienplayer für deine eigenen Playlists auf Fire TV, Android TV, LG, Samsung, iPhone, Apple TV und Mac.">
+<meta name="description" content="JKR Premium Player – Medienplayer für deine eigenen Playlists auf Fire TV, Android TV, LG, Samsung, iPhone, Apple TV, Mac und Windows.">
 <meta name="theme-color" content="#0a0c11">
 <link rel="icon" href="logo.png">
 <style>
@@ -157,7 +157,7 @@
 
 <div class="devices wrap">
   <p data-k="devTitle"></p>
-  <div class="pills"><span>Fire TV</span><span>Android TV</span><span>Google TV</span><span>LG webOS</span><span>iPhone</span><span>iPad</span><span>Apple TV</span><span>Mac</span></div>
+  <div class="pills"><span>Fire TV</span><span>Android TV</span><span>Google TV</span><span>LG webOS</span><span>iPhone</span><span>iPad</span><span>Apple TV</span><span>Mac</span><span>Windows</span></div>
 </div>
 
 <main>
@@ -270,6 +270,12 @@
         <p data-k="macText"></p>
         <a class="btn small" href="https://github.com/Baro86/jkr-premium-player/releases/download/mac-v1.2.1/JKR-Player-Mac-1.2.1.dmg" data-k="macBtn"></a>
       </div>
+      <div class="card">
+        <h3>Windows <span class="badge soon" data-k="beta"></span></h3>
+        <p class="who" data-k="winWho"></p>
+        <p data-k="winText"></p>
+        <a class="btn small" href="https://github.com/Baro86/jkr-premium-player/releases/download/win-v1.0.4-test/JKR-Premium-Player-Setup-1.0.4.exe" data-k="winBtn"></a>
+      </div>
     </div>
   </section>
 
@@ -340,6 +346,10 @@ const T = {
     macWho: "Mac mit macOS 14 oder neuer",
     macText: "Datei laden, öffnen und JKR Player in den Ordner „Programme“ ziehen. Von Apple geprüft.",
     macBtn: "Für Mac herunterladen",
+    beta: "Testversion",
+    winWho: "Windows 10 oder 11 (64 Bit)",
+    winText: "Datei laden und starten. Windows zeigt beim ersten Start eine Warnung: „Weitere Informationen“ und dann „Trotzdem ausführen“ wählen. Updates kommen danach von selbst.",
+    winBtn: "Für Windows herunterladen",
     startTitle: "Erste Schritte",
     start1: "App öffnen und den Hinweis mit „Verstanden“ bestätigen.",
     start2: "Server-Adresse, Benutzername und Passwort eingeben – oder unter „M3U-Link“ deine Playlist einfügen.",
@@ -388,6 +398,10 @@ const T = {
     macWho: "Mac with macOS 14 or later",
     macText: "Download the file, open it and drag JKR Player into the Applications folder. Checked by Apple.",
     macBtn: "Download for Mac",
+    beta: "Test version",
+    winWho: "Windows 10 or 11 (64-bit)",
+    winText: "Download the file and run it. Windows shows a warning on first start: choose “More info” and then “Run anyway”. Updates arrive automatically afterwards.",
+    winBtn: "Download for Windows",
     startTitle: "Getting started",
     start1: "Open the app and confirm the notice with “Understood”.",
     start2: "Enter the server address, username and password – or paste your playlist under “M3U link”.",
@@ -436,6 +450,10 @@ const T = {
     macWho: "macOS 14 veya üzeri Mac",
     macText: "Dosyayı indir, aç ve JKR Player'ı “Uygulamalar” klasörüne sürükle. Apple tarafından kontrol edildi.",
     macBtn: "Mac için indir",
+    beta: "Test sürümü",
+    winWho: "Windows 10 veya 11 (64 bit)",
+    winText: "Dosyayı indir ve çalıştır. Windows ilk açılışta bir uyarı gösterir: “Ek bilgi” ve ardından “Yine de çalıştır” seç. Güncellemeler sonra kendiliğinden gelir.",
+    winBtn: "Windows için indir",
     startTitle: "İlk adımlar",
     start1: "Uygulamayı aç ve bilgilendirmeyi “Anladım” ile onayla.",
     start2: "Sunucu adresini, kullanıcı adını ve şifreyi gir – ya da “M3U bağlantısı” altına oynatma listeni ekle.",
