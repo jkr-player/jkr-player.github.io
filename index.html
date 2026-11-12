@@ -3,10 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JKR Premium Player</title>
+<title>JKR Premium Player – Live-TV, Filme und Serien auf Fire TV, LG, iPhone, Mac und Windows</title>
 <meta name="description" content="JKR Premium Player – Medienplayer für deine eigenen Playlists auf Fire TV, Android TV, LG, Samsung, iPhone, Apple TV, Mac und Windows.">
 <meta name="theme-color" content="#0a0c11">
+<link rel="canonical" href="https://jkr-player.github.io/">
 <link rel="icon" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JKR Premium Player">
+<meta property="og:title" content="JKR Premium Player – flüssig, stabil, schnell">
+<meta property="og:description" content="Der Player für deine eigenen Playlists: Live-TV, Filme und Serien. 7 Tage gratis testen, danach einmal 10 €. Kein Abo.">
+<meta property="og:url" content="https://jkr-player.github.io/">
+<meta property="og:image" content="https://jkr-player.github.io/img/home.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root { --bg: #0a0c11; --card: #14171e; --line: #252933; --text: #eceef2; --muted: #a2a8b4; --cream: #f2e8d1; --gold: #d9b873; --grad: linear-gradient(135deg, #f6e3b0, #d9b873 55%, #b08a42); }
   * { box-sizing: border-box; }
@@ -25,6 +34,8 @@
   .links { display: flex; gap: 20px; margin-left: auto; }
   .links a { color: var(--muted); text-decoration: none; font-size: 15px; }
   .links a:hover { color: var(--cream); }
+  .navbtn { background: var(--grad); color: #17130a; text-decoration: none; font-weight: 700; font-size: 14px; padding: 7px 16px; border-radius: 999px; white-space: nowrap; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
   .langs { display: flex; gap: 4px; }
   .langs button { background: none; color: var(--muted); border: 1px solid var(--line); border-radius: 8px; padding: 5px 9px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
   .langs button[aria-pressed="true"] { color: var(--bg); background: var(--cream); border-color: var(--cream); }
@@ -40,7 +51,10 @@
   .lead { color: var(--muted); font-size: 19px; max-width: 520px; margin: 0 0 28px; }
   .cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
   .btn { display: inline-block; background: var(--grad); color: #17130a; text-decoration: none; font-weight: 700; padding: 13px 26px; border-radius: 999px; font-size: 16px; }
+  .btn, .navbtn { transition: transform .15s ease, filter .15s ease, border-color .15s ease; }
+  .btn:hover, .navbtn:hover { transform: translateY(-1px); filter: brightness(1.07); }
   .btn.ghost { background: none; color: var(--cream); border: 1px solid var(--line); }
+  .btn.ghost:hover { border-color: var(--gold); }
   .btn.small { padding: 8px 16px; font-size: 15px; margin-top: 10px; }
   .fine { color: var(--muted); font-size: 14px; margin: 16px 0 0; }
 
@@ -56,6 +70,11 @@
   .pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
   .pills span { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 8px 18px; font-weight: 600; font-size: 15px; color: var(--cream); }
 
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding-top: 34px; }
+  .facts div { border: 1px solid var(--line); background: linear-gradient(180deg, rgba(255, 255, 255, .035), rgba(255, 255, 255, 0)); border-radius: 16px; padding: 18px 16px; text-align: center; }
+  .facts b { display: block; font-size: 30px; line-height: 1.1; letter-spacing: -.5px; }
+  .facts span { color: var(--muted); font-size: 14px; }
+
   section.wrap { padding-top: 84px; }
   .kicker { color: var(--gold); font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 8px; }
   h2 { font-size: clamp(28px, 3.6vw, 42px); line-height: 1.12; letter-spacing: -.8px; margin: 0 0 14px; }
@@ -70,12 +89,14 @@
   .pic .phone { position: absolute; width: 26%; right: 4%; bottom: -8%; }
 
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; transition: border-color .2s ease, transform .2s ease; }
+  .grid .card:hover { border-color: rgba(217, 184, 115, .45); transform: translateY(-2px); }
   .card h3 { margin: 0 0 6px; font-size: 19px; }
   .card .who { color: var(--muted); font-size: 15px; margin: 0 0 10px; }
   .card ol { margin: 0; padding-left: 20px; }
   .card li { margin: 4px 0; }
-  .ico { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: rgba(217, 184, 115, .12); border: 1px solid rgba(217, 184, 115, .25); font-size: 19px; margin-bottom: 12px; }
+  .ico { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: rgba(217, 184, 115, .12); border: 1px solid rgba(217, 184, 115, .25); font-size: 19px; margin-bottom: 12px; color: var(--gold); }
+  .ico svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
   .badge { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; margin-left: 6px; vertical-align: middle; }
   .ok { background: #1f3a2a; color: #8fd6a6; }
   .soon { background: #3a321f; color: var(--gold); }
@@ -95,12 +116,20 @@
 
   .faq { max-width: 820px; margin: 0 auto; }
   details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin: 10px 0; }
-  summary { cursor: pointer; font-weight: 600; }
+  summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: ""; flex: none; width: 9px; height: 9px; border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold); transform: rotate(45deg); transition: transform .2s ease; margin-right: 4px; }
+  details[open] summary::after { transform: rotate(-135deg); }
+  details[open] { border-color: rgba(217, 184, 115, .35); }
   details p { color: var(--muted); margin: 8px 0 2px; }
   .note { max-width: 820px; margin: 48px auto 0; border-left: 3px solid var(--gold); padding: 6px 14px; color: var(--muted); font-size: 15px; }
-  footer { margin-top: 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding: 22px 0 40px; }
-  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
-  footer .brand { margin-right: auto; }
+  footer { margin-top: 64px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding: 34px 0 40px; }
+  .fcols { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 28px; }
+  .fcols p { margin: 12px 0 0; max-width: 340px; }
+  .fcols h4 { margin: 4px 0 10px; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
+  .fcols a:not(.brand) { display: block; color: var(--muted); text-decoration: none; padding: 3px 0; }
+  .fcols a:not(.brand):hover { color: var(--cream); }
+  .legal { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13px; }
 
   .rv { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
   .rv.in { opacity: 1; transform: none; }
@@ -108,7 +137,11 @@
 
   @media (max-width: 860px) {
     .links { display: none; }
-    .langs { margin-left: auto; }
+    nav .wrap { gap: 10px; }
+    .navbtn { margin-left: auto; padding: 6px 12px; }
+    .facts { grid-template-columns: repeat(2, 1fr); }
+    .fcols { grid-template-columns: 1fr 1fr; }
+    .fcols > div:first-child { grid-column: 1 / -1; }
     .hero { padding-top: 40px; }
     .hero .wrap, .split { grid-template-columns: 1fr; gap: 30px; }
     .split.flip > .pic { order: 0; }
@@ -126,9 +159,9 @@
     <div class="links">
       <a href="#funktionen" data-k="navFeat"></a>
       <a href="#preis" data-k="navPrice"></a>
-      <a href="#app" data-k="navGet"></a>
       <a href="#hilfe" data-k="navHelp"></a>
     </div>
+    <a class="navbtn" href="#app" data-k="cta1"></a>
     <div class="langs" role="group" aria-label="Sprache / Language / Dil">
       <button data-lang="de" title="Deutsch">DE</button><button data-lang="en" title="English">EN</button><button data-lang="tr" title="Türkçe">TR</button>
     </div>
@@ -154,6 +187,13 @@
     </div>
   </div>
 </header>
+
+<div class="facts wrap">
+  <div><b class="gold" data-k="f1v"></b><span data-k="f1l"></span></div>
+  <div><b class="gold">10&nbsp;€</b><span data-k="f2l"></span></div>
+  <div><b class="gold">9</b><span data-k="f3l"></span></div>
+  <div><b class="gold">3</b><span data-k="f4l"></span></div>
+</div>
 
 <div class="devices wrap">
   <p data-k="devTitle"></p>
@@ -200,14 +240,14 @@
       <h2 data-k="featTitle"></h2>
     </div>
     <div class="grid" style="margin-top:26px">
-      <div class="card"><span class="ico">🛡</span><h3 data-k="ft7"></h3><p class="who" data-k="fd7"></p></div>
-      <div class="card"><span class="ico">📼</span><h3 data-k="ft0"></h3><p class="who" data-k="fd0"></p></div>
-      <div class="card"><span class="ico">▶</span><h3 data-k="ft1"></h3><p class="who" data-k="fd1"></p></div>
-      <div class="card"><span class="ico">🔔</span><h3 data-k="ft2"></h3><p class="who" data-k="fd2"></p></div>
-      <div class="card"><span class="ico">⚽</span><h3 data-k="ft3"></h3><p class="who" data-k="fd3"></p></div>
-      <div class="card"><span class="ico">👁</span><h3 data-k="ft4"></h3><p class="who" data-k="fd4"></p></div>
-      <div class="card"><span class="ico">🔢</span><h3 data-k="ft5"></h3><p class="who" data-k="fd5"></p></div>
-      <div class="card"><span class="ico">📲</span><h3 data-k="ft6"></h3><p class="who" data-k="fd6"></p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><h3 data-k="ft7"></h3><p class="who" data-k="fd7"></p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12a8.5 8.5 0 1 0 2.8-6.3"/><path d="M3.5 4.5v4.6h4.6"/><path d="M12 8v4l3 2"/></svg></span><h3 data-k="ft0"></h3><p class="who" data-k="fd0"></p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg></span><h3 data-k="ft1"></h3><p class="who" data-k="fd1"></p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16v-5a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></span><h3 data-k="ft2"></h3><p class="who" data-k="fd2"></p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5l4 3-1.5 4.5h-5L8 10.5z"/></svg></span><h3 data-k="ft3"></h3><p class="who" data-k="fd3"></p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></svg></span><h3 data-k="ft4"></h3><p class="who" data-k="fd4"></p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></svg></span><h3 data-k="ft5"></h3><p class="who" data-k="fd5"></p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10 12h4M12.5 10l2 2-2 2"/></svg></span><h3 data-k="ft6"></h3><p class="who" data-k="fd6"></p></div>
     </div>
   </section>
 
@@ -309,9 +349,26 @@
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="#top"><img src="logo.png" alt=""><span>JKR<small>Premium Player</small></span></a>
-    <span><span data-k="contact"></span> <a href="mailto:jokermedya58@gmail.com">jokermedya58@gmail.com</a></span>
-    <a href="datenschutz.html" data-k="privacy"></a>
+    <div class="fcols">
+      <div>
+        <a class="brand" href="#top"><img src="logo.png" alt=""><span>JKR<small>Premium Player</small></span></a>
+        <p data-k="footText"></p>
+      </div>
+      <div>
+        <h4 data-k="footNav"></h4>
+        <a href="#funktionen" data-k="navFeat"></a>
+        <a href="#preis" data-k="navPrice"></a>
+        <a href="#app" data-k="navGet"></a>
+        <a href="#hilfe" data-k="navHelp"></a>
+      </div>
+      <div>
+        <h4 data-k="contact"></h4>
+        <a href="mailto:jokermedya58@gmail.com">jokermedya58@gmail.com</a>
+        <a href="impressum.html" data-k="imprint"></a>
+        <a href="datenschutz.html" data-k="privacy"></a>
+      </div>
+    </div>
+    <p class="legal">© 2026 JKR Premium Player</p>
   </div>
 </footer>
 <script>
@@ -366,7 +423,8 @@ const T = {
     q6: "Gibt es Sender oder Filme in der App?",
     a6: "Nein. Die App ist nur ein Player. Die Inhalte kommen von deinem eigenen Anbieter.",
     disclaimer: "JKR Premium Player ist ein allgemeiner Medienplayer und enthält keine Inhalte. Es werden keine Sender, Filme, Serien oder Playlists mitgeliefert, verkauft oder vermittelt. Nutze nur Inhalte, zu deren Nutzung du berechtigt bist.",
-    contact: "Kontakt:", privacy: "Datenschutz"
+    contact: "Kontakt", privacy: "Datenschutz", imprint: "Impressum", footNav: "Seite", footText: "Der Player für deine eigenen Playlists. Sender und Inhalte sind nicht enthalten.",
+    f1v: "7 Tage", f1l: "gratis testen", f2l: "einmalig, kein Abo", f3l: "Geräte-Plattformen", f4l: "Sprachen"
   },
   en: {
     intro: "A fast, clean player for your own playlists – live TV, movies and series from your provider on your TV and phone.",
@@ -418,7 +476,8 @@ const T = {
     q6: "Are there channels or movies in the app?",
     a6: "No. The app is only a player. The content comes from your own provider.",
     disclaimer: "JKR Premium Player is a general media player and contains no content. No channels, movies, series or playlists are included, sold or arranged. Only use content you are entitled to use.",
-    contact: "Contact:", privacy: "Privacy policy (German)"
+    contact: "Contact", privacy: "Privacy policy (German)", imprint: "Legal notice (German)", footNav: "Page", footText: "The player for your own playlists. Channels and content are not included.",
+    f1v: "7 days", f1l: "free trial", f2l: "one-time, no subscription", f3l: "device platforms", f4l: "languages"
   },
   tr: {
     intro: "Kendi oynatma listelerin için hızlı ve sade bir oynatıcı – sağlayıcından canlı TV, film ve diziler televizyonunda ve telefonunda.",
@@ -470,7 +529,8 @@ const T = {
     q6: "Uygulamada kanal veya film var mı?",
     a6: "Hayır. Uygulama sadece bir oynatıcıdır. İçerikler kendi sağlayıcından gelir.",
     disclaimer: "JKR Premium Player genel bir medya oynatıcıdır ve içerik barındırmaz. Kanal, film, dizi veya oynatma listesi sunulmaz, satılmaz veya aracılık edilmez. Yalnızca kullanma hakkına sahip olduğun içerikleri kullan.",
-    contact: "İletişim:", privacy: "Gizlilik (Almanca)"
+    contact: "İletişim", privacy: "Gizlilik (Almanca)", imprint: "Künye (Almanca)", footNav: "Sayfa", footText: "Kendi oynatma listelerin için oynatıcı. Kanal ve içerik dahil değildir.",
+    f1v: "7 gün", f1l: "ücretsiz dene", f2l: "tek seferlik, abonelik yok", f3l: "cihaz platformu", f4l: "dil"
   }
 };
 // Texts of the landing sections (hero, picture blocks, price).
